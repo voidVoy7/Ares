@@ -20,7 +20,7 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 # Terra
 sed -i '/^\[terra\]$/,/^\[/{s/^enabled=0$/enabled=1/}' /etc/yum.repos.d/terra.repo
 # Openrazer
-sudo dnf config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo
+dnf config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo
 
 
 dnf5 install -y tmux
