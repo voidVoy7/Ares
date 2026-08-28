@@ -19,8 +19,6 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo
 # Terra
 sed -i '/^\[terra\]$/,/^\[/{s/^enabled=0$/enabled=1/}' /etc/yum.repos.d/terra.repo
-# Openrazer
-dnf config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo
 
 
 dnf5 install -y tmux
@@ -30,7 +28,8 @@ dnf install -y ghostty
 dnf install -y vesktop
 dnf install -y code
 dnf install -y firefox
-dnf install -y openrazer-meta
+dnf install -y openrazer
+dnf install -y akmod-openrazer
 dnf install -y polychromatic
 
 
