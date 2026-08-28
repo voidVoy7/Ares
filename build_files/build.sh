@@ -22,7 +22,6 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 dnf5 install -y tmux
 dnf install -y helix
 dnf install -y gimp
-dnf install -y fastfetch
 dnf install -y ghostty
 dnf install -y vesktop
 dnf install -y code
