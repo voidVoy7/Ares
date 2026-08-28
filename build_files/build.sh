@@ -20,7 +20,8 @@ dnf -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/ter
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo
 # Steam
-##dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-steam.repo
+dnf -y in https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf -y config-manager setopt fedora-cisco-openh264.enabled=1
 
 
 dnf5 install -y tmux
@@ -30,7 +31,7 @@ dnf install -y fastfetch
 dnf install -y ghostty
 dnf install -y vesktop
 dnf install -y code
-dnf install -y --setopt=install_weak_deps=False --repo='terra' steam
+dnf install -y steam
 
 
 # Use a COPR Example:
